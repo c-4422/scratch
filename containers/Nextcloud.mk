@@ -1,33 +1,35 @@
 ###############################################################
 # Nextcloud Container Configuration File
 ###############################################################
-CONTAINER_NAME=nextcloud
-PORT=8000
+NEXTCLOUD=nextcloud
+DATABASE=next_db
+NEXTCLOUD_PORT=8000
+DATABASE_PORT=3306
 
 container:
 	@echo "Making nextcloud"
 	@echo "IP_ADDRESS = $(IP_ADDRESS)"
 
 name:
-	@echo "$(CONTAINER_NAME)"
+	@echo "$(NEXTCLOUD)/$(DATABASE)"
 
 port:
-	@echo "$(PORT)"
+	@echo "$(NEXTCLOUD_PORT)/$(DATABASE_PORT)"
 
 start:
-	@echo "Starting $(CONTAINER_NAME) container"
+	@echo "Starting $(NEXTCLOUD) container"
 
 stop:
-	@echo "Stopping $(CONTAINER_NAME) container"
+	@echo "Stopping $(NEXTCLOUD) container"
 
 install:
-	@echo "Installing $(CONTAINER_NAME)"
+	@echo "Installing $(NEXTCLOUD)"
 
 enable:
-	@echo "Enabling $(CONTAINER_NAME)"
+	@echo "Enabling $(NEXTCLOUD)"
 
 disable:
-	@echo "Disabling $(CONTAINER_NAME)"
+	@echo "Disabling $(NEXTCLOUD)"
 
 clean:
-	@echo "Cleaning $(CONTAINER_NAME)"
+	@echo "Cleaning $(NEXTCLOUD)"
