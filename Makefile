@@ -6,8 +6,8 @@ IP_ADDRESS=192.168.1.232
 SUBDIRS := $(wildcard *containers/*.mk)
 
 all:
-	@export IP_ADDRESS
-	@$(foreach file, $(SUBDIRS), make -f $(file);)
+	@export IP_ADDRESS=$(IP_ADDRESS) && \
+	$(foreach file, $(SUBDIRS), make -f $(file);)
 
 start:
 	@$(foreach file, $(SUBDIRS), make -f $(file) start;)
